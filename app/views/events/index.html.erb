@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>EVENTS!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>User</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Location</th>
+      <th>Snacks</th>
+      <th>Variations</th>
+      <th>Teach?</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @e.each do |x| %>
+      <tr>
+        <td><%= x.game %></td>
+        <td><%= x.user_id %></td>
+        <td><%= x.date %></td>
+        <td><%= x.time %></td>
+        <td><%= x.location %></td>
+        <td><%= x.snacks %></td>
+        <td><%= x.variation %></td>
+        <td><%= x.teach %></td>
+        <td><%= link_to 'Show', x %></td>
+        <td><%= link_to 'Edit', edit_event_path(x) %></td>
+        <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_event_path %>

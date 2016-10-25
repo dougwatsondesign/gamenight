@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :events, :venues
+
   
   root 'welcome#index'
 
@@ -8,5 +10,7 @@ Rails.application.routes.draw do
   get 'contact' => 'welcome#contact'
 
   get 'games' => 'welcome#games'
+
+  get 'events' => 'welcome#events'
 
 end
