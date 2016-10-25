@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  date: 2016-10-24
+  time: 2016-10-24 13:14:40
+  snacks: MyString
+  variation: MyText
+  teach: MyString
+  game: MyString
+
+two:
+  location: MyString
+  date: 2016-10-24
+  time: 2016-10-24 13:14:40
+  snacks: MyString
+  variation: MyText
+  teach: MyString
+  game: MyString

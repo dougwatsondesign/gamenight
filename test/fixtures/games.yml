@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  type: 
+  category: MyString
+  weight: MyString
+  age: MyString
+  players: MyString
+  table_size: MyString
+
+two:
+  title: MyString
+  type: 
+  category: MyString
+  weight: MyString
+  age: MyString
+  players: MyString
+  table_size: MyString
