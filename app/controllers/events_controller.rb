@@ -12,6 +12,8 @@ class EventsController < ApplicationController
     	@e = Event.all
   	end
 
+  	def edit
+  	end
 
   	def create
 	    @event = Event.new(event_params)
@@ -30,10 +32,17 @@ class EventsController < ApplicationController
 	        if @event.update(event_params)
 	          format.html { redirect_to @event, notice: 'Game night was successfully updated.' }
 	     	else
-	        format.html { render :edit }
+	          format.html { render :edit }
 	      	end
     	end
   	end
+
+  	def destroy
+	      @event.destroy
+	    respond_to do |format|
+	      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+	    end
+	end
 
   	private
 

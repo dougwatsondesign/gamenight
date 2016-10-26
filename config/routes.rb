@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :events, :venues
+  resources :events
+  resources :venues 
+  resources :games
+ 
+  get "profiles/:id" => "profiles#show", as: :profile
+  get "profiles" => "profiles#index"
+  get "calendar" => 'profiles#calendar'
 
   
   root 'welcome#index'
@@ -8,9 +14,4 @@ Rails.application.routes.draw do
   get 'about' => 'welcome#about'
 
   get 'contact' => 'welcome#contact'
-
-  get 'games' => 'welcome#games'
-
-  get 'events' => 'welcome#events'
-
 end

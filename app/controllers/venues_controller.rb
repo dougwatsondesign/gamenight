@@ -11,6 +11,9 @@ class VenuesController < ApplicationController
     	@v = Venue.all
   	end
 
+  	def edit
+  	end
+
 	def create
 	    @venue = Venue.new(venue_params)
 
@@ -22,23 +25,30 @@ class VenuesController < ApplicationController
 		      end
 		    end
 	  	end
+	end
 
   	def update
-	    respond_to do |format|
-	        if @venue.update(venue_params)
+  		respond_to do |format|
+	        if @venue.update_attributes(venue_params)
 	          format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
 	     	else
-	        format.html { render :edit }
+	          format.html { render :edit }
 	      	end
     	end
   	end
 
+  	def destroy
+	    @venue.destroy
+	    respond_to do |format|
+	      format.html { redirect_to venues_url, notice: 'Venue was successfully destroyed.' }
+	    end
+	end
+
   	private
 
-	 def venue_params
-	    params.require(:venue).permit(:name, :address, :phone, :website, :venues_type)
-	 end
-   	 def set_venue
-    	@venue = Venue.find(params[:id])
-	 end
-	end
+		def venue_params
+		    params.require(:venue).permit(:name, :address, :phone, :website, :venues_type)
+		end
+	   	def set_venue
+	    	@venue = Venue.find(params[:id])
+		end
