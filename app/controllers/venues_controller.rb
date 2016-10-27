@@ -25,11 +25,11 @@ class VenuesController < ApplicationController
 		      end
 		    end
 	  	end
-	end
+	
 
   	def update
   		respond_to do |format|
-	        if @venue.update_attributes(venue_params)
+	        if @venue.update(venue_params)
 	          format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
 	     	else
 	          format.html { render :edit }
@@ -43,6 +43,7 @@ class VenuesController < ApplicationController
 	      format.html { redirect_to venues_url, notice: 'Venue was successfully destroyed.' }
 	    end
 	end
+end
 
   	private
 

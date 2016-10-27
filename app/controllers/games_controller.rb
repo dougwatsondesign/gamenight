@@ -25,7 +25,7 @@ class GamesController < ApplicationController
 		      end
 		    end
 	  	end
-	end
+	
 
   	def update
         if @game.update(game_params)
@@ -43,6 +43,7 @@ class GamesController < ApplicationController
 	      format.html { redirect_to games_url, notice: 'Game was successfully destroyed.' }
 	    end
 	end
+end
 
   	private
 
