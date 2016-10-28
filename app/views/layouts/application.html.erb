@@ -30,9 +30,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">Browse by Games</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="games">Browse by Games</a></li>
+        <li><a href="contact">Contact</a></li>
+        <li><a href="about">About</a></li>
         <li><a href="venues#show">Venues</a></li>
         <li><a href="events#show">Events!</a></li>
         <li><a href="events/new">Host a Game Night!</a></li>
@@ -60,7 +60,13 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
   <body>
+     <div class="container">
+      <div class="pull-right">
+        <% if user_signed_in? %>
+          <%= link_to "Sign Out", destroy_user_session_path, method: delete, class: "btn btn-danger" %>
+        <% end %>
     <%= yield %>
   </body>
 </html>
