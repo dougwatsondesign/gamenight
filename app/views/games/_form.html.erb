@@ -11,33 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :games_type%><br>
-    <%= f.text_field :games_type %>
+    <%= f.text_field :games_type, class: "form-control" %>
   </div>
-   <div class="field">
+   <div class="field form-group">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.text_field :category, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+    <%= f.text_field :weight, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :age %><br>
-    <%= f.text_field :age %>
+    <%= f.text_field :age, class: "form-control" %>
   </div>
-    <div class="field">
+    <div class="field form-group">
     <%= f.label :players %><br>
-    <%= f.text_field :players %>
+    <%= f.text_field :players, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :table_size %><br>
-    <%= f.text_field :table_size %>
+    <%= f.text_field :table_size, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: "form-control", rows: 4 %>
   </div>
   <div class="actions">
     <%= f.submit %>
