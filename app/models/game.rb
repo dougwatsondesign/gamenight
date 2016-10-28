@@ -8,4 +8,5 @@ class Game < ApplicationRecord
 	validates :age, presence: true
 	validates :players, presence: true
 	validates :table_size, presence: true
+	validates :description, presence: true
 end

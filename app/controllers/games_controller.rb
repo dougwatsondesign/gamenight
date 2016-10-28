@@ -48,7 +48,7 @@ end
   	private
 
 		def game_params
-		    params.require(:game).permit(:games_type, :category, :weight, :age, :players, :table_size, :title)
+		    params.require(:game).permit(:games_type, :category, :weight, :age, :players, :table_size, :title, :description)
 		end
 	   	def set_game
 	    	@game = Game.find(params[:id])
