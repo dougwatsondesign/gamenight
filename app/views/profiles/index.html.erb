@@ -1,0 +1,4 @@
+<h3>All Players<h3/>
+<% @users.each do |user| %>
+  <%= link_to user.username, profile_path(user) %><br>
+<% end %>
