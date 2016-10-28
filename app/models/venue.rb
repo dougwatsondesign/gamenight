@@ -1,5 +1,5 @@
 class Venue < ApplicationRecord
-
+	has many :events
 
 	validates :name, presence: true
 	validates :address, presence: true
