@@ -1,5 +1,5 @@
 class Venue < ApplicationRecord
-	has_many :events
+	# has_many :events
 
 
 	validates :name, presence: true
