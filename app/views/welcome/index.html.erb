@@ -1,2 +1,14 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Game Night!</h1>
+<h2>Welcome to Game Night!  Find friends and join a game or set up your own!</h2>
+<p>Popular games.</p>
+
+<div class="row"> 
+	<%= @games.title.each do |game_title| %>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= link_to game.title, game %>
+			</div>
+		</div>
+	</div>
+</div>

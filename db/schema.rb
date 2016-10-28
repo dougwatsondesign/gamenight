@@ -65,10 +65,10 @@ ActiveRecord::Schema.define(version: 20161025150619) do
     t.string   "name"
     t.string   "address"
     t.string   "website"
-    t.string   "venues_type"
+    t.string   "type"
     t.string   "phone"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
