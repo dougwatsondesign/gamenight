@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-	has_many :events
+	# has_many :events
 
 	validates :title, presence: true
 	validates :games_type, presence: true
@@ -8,4 +8,5 @@ class Game < ApplicationRecord
 	validates :age, presence: true
 	validates :players, presence: true
 	validates :table_size, presence: true
+	validates :description, presence: true
 end
