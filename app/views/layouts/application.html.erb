@@ -53,6 +53,9 @@
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
+            <li><% if user_signed_in? %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+            <% end %></li>
           </ul>
         </li>
       </ul>
@@ -61,12 +64,7 @@
 </nav>
 
 
-  <body>
-     <div class="container">
-      <div class="pull-right">
-        <% if user_signed_in? %>
-          <%= link_to "Sign Out", destroy_user_session_path, method: delete, class: "btn btn-danger" %>
-        <% end %>
+  <body>   
     <%= yield %>
   </body>
 </html>
