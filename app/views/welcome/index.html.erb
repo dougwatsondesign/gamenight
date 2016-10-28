@@ -3,7 +3,7 @@
 <p>Popular games.</p>
 
 <div class="row"> 
-	<%= @games.title.each do |game_title| %>
+  <% @g.each do |game| %>
 	<div class="col-md-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -11,4 +11,7 @@
 			</div>
 		</div>
 	</div>
+  <% end %>
 </div>
+
+
