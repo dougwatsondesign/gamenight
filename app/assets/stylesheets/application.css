@@ -18,3 +18,30 @@
 .cant-see-me {
 	display: none;
 }
+
+.container {
+	margin-top: 50px;
+	margin-bottom: 25px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+}
+
+.hero-unit {
+    background-image:url('hero.jpg');
+    background-size:cover;
+    background-color: #EEEEEE;
+    height:450px;
+  }
+  
+.hero-unit h1 {
+    color: #FFFFFF;
+    font-size: 60px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.hero-unit h2 {
+    font-size: 25px;
+    color: #FFFFFF;
+}
