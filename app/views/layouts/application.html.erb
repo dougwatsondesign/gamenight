@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" %>
- 	 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
- 	 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
- 	 <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" %>
- 	 <%= javascript_include_tag"https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}" %>
+   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <%= javascript_include_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" %>
+   <%= javascript_include_tag"https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}" %>
+   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <%= csrf_meta_tags %>
 
   </head>
@@ -62,11 +63,14 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
   <body>   
-  <div class="container">
     <%= yield %>
-  </div>
   </body>
+
+<footer>
+<br>
+<p>Photo Credit: <a href="https://www.flickr.com/photos/46259794@N02/27824441794/">derekbruff</a> Flickr via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-nc/2.0/">cc</a></p>
+<br>
+</footer>
+
 </html>
