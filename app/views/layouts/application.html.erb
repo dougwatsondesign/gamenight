@@ -25,35 +25,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "homepage", root_path, class:"navbar-brand" %>
+      <%= link_to image_tag("navlogo.png", :class => "style_image"), root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="games">Browse by Games</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="venues#show">Venues</a></li>
-        <li><a href="events#show">Events!</a></li>
-        <li><a href="events/new">Host a Game Night!</a></li>
-      </ul>
+     
       <form class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="What Game Do You Want to Play?" style="width: 300px;">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Zip Code" style="width: 125px;">
+        </div>
+        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Let's Play</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+       <ul class="nav navbar-nav">
+  
+        <li><%= link_to "Browse Games", games_path, class: "navbar-brand" %></li>
+        <li><%= link_to "Browse Venues", venues_path, class: "navbar-brand" %></li>
+        
+      </ul>
+        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to "View Profile", profiles_path %></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
             <li><% if user_signed_in? %>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
             <% end %></li>
@@ -67,10 +67,40 @@
     <%= yield %>
   </body>
 
-<footer>
+
+
+ <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a><%= link_to "Home", root_path %></a>
+                        </li>
+                         <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a><%= link_to "About GameNights", about_path %></a>
+                        </li>
+                        
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a><%= link_to "Contact", contact_path %></a>
+                        </li>
+                    </ul>
+
+                       <hr>
+
+
+                    <div class="rights">
+                      <p class="copyright text-muted small">&copy; 2016 <strong>GameNight & Doug Watson  </strong>All Rights Reserved</p>
+                      <p class="copyright text-muted small">Photo Credit: <a href="https://www.flickr.com/photos/46259794@N02/27824441794/">derekbruff</a> Flickr via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-nc/2.0/">cc</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 <br>
-<p>Photo Credit: <a href="https://www.flickr.com/photos/46259794@N02/27824441794/">derekbruff</a> Flickr via <a href="http://compfight.com">Compfight</a> <a href="https://creativecommons.org/licenses/by-nc/2.0/">cc</a></p>
+
 <br>
-</footer>
 
 </html>
