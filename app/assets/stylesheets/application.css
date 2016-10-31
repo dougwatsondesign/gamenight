@@ -16,16 +16,17 @@
 
 
 .cant-see-me {
-	display: none;
+    display: none;
 }
-
+.navbar {
+    margin-bottom: 0px;
+}
 .container {
-	margin-top: 50px;
-	margin-bottom: 25px;
-	padding-bottom: 10px;
-	border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-radius: 10px;
 }
-
 .hero-unit {
     background-image:url('hero.jpg');
     background-size:cover;
@@ -40,8 +41,32 @@
     line-height: 1;
     margin-bottom: 0;
 }
-
 .hero-unit h2 {
     font-size: 25px;
     color: #FFFFFF;
 }
+.hero-unit a {
+    color: white;
+}
+
+.container-fluid {
+    padding: 10px 0;
+    background-color: #f8f8f8;
+}
+
+.port-header {
+    text-align: center; 
+}
+
+.btn-default {
+    color: white;
+    background-color: #fcb117;
+}
+
+
+
+
+
+
+
+
