@@ -12,7 +12,7 @@
       </div>
       <div class="row">
         <div class="col-xs-6">
-          <span class="small text">Game Nights!</span><br>
+          <span class="small text">Game Nights Hosted!</span><br>
             <%= @user.events.count %>
 
         </div>
@@ -27,8 +27,47 @@
   </div>
   <div class="col-xs-1"></div>
 
-
+<div class="col-xs-7 panel panel-default">
+  <% if current_user.id == @user.id %>
+    <h2>Game Nights I'm Hosting</h2>
+  <% end %>
+    <div class="row">
+    <% @user.events.each do |event| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="caption">
+         <h3><a href="#" target="_blank"><%= event.user.username %></a></h3>
+               <p class="lead"><%= event.date %></p>
+               <p><ul>
+                  <li>Time: <%= event.time %></li>
+                  <li>Game: <%= event.game %></li>
+                  <li>Location: <%= event.location %></li>
+                  <li>Snacks: <%= event.snacks %></li>
+                  <li>Variations?: <%= event.variation %></li>
+                  <li>Teach?: <%= event.teach %></li>
+                  <li> 
+                  <% if current_user.attendings?(event) %>
+                    <%= link_to event_attending_path(event), method: :delete do %>
+                      <p>Not Attending <i class="glyphicon glyphicon-remove"></i></p>
+                    <% end %>
+                  <% else %>
+                    <%= link_to event_attending_path(event), method: :post do %>
+                      <p>Attending <i class="glyphicon glyphicon-ok"></i></p>
+                    <% end %>
+                  <% end %></li>
+                </ul></p>
+                <p><a href="#" class="btn btn-default" role="button" target="_blank">More Event Info</a></p>
+              <br>
+            <hr>
+         </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
   
 </div>
+
+
+ 
 

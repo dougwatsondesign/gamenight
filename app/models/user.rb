@@ -10,6 +10,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :events
+  has_many :attendings
+
+  def attendings?(event)
+    event.attendings.where(user_id: id).any?
+  end
 
   validates :username, presence: true, uniqueness: true
 end

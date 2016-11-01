@@ -1,10 +1,38 @@
 <p id="notice"><%= notice %></p>
 
+<div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <h2 class="section-heading"><%= @game.title %></h2>
+                    <p><strong>Type: </strong><%= @game.games_type %></p>
+                    <p><strong>Category: </strong><%= @game.category %></p>
+                    <p><strong>Age: </strong><%= @game.age %></p>
+                    <p><strong>Weight: </strong><%= @game.weight %></p>
+                    <p><strong># Players: </strong><%= @game.players %></p>
+                    <br>
+                    <p><strong>Description:</strong></p>
+                    <p><%= @game.description %></p>
+
+                     <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-king"></i> Host This Game</button>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <!-- <img class="img-responsive" src="images/hero.jpg" alt=""> -->
+                    <%= link_to image_tag("sorry.jpg",:class => "img-responsive") %>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
 
 
 
 
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+
 <%= link_to 'Back', games_path %>
      
