@@ -22,11 +22,11 @@
 <p>Popular games.</p>
 
 <div class="row"> 
-  <% @g.each do |game| %>
+  <% @g.each do |event| %>
 	<div class="col-md-6">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<%= link_to game.title, game %>
+				<%= link_to event.title, event %>
 			</div>
 		</div>
 	</div>
