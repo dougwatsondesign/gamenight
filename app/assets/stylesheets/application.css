@@ -100,9 +100,23 @@ hr {
 }
 
 #about-page {
-    background-color: #f4f4f4;
+    background-color: #FFFFFF;
 }
 
+.img-circle {
+    border-radius: 50%;
+    max-height: 250px;
+}
+
+.thumbnail {
+    border: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 
 
