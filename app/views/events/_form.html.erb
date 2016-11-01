@@ -15,6 +15,11 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id, value: current_user.id %>
   </div>
+
+   <div class="field form-group">
+    <%= f.label "Name of your event" %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
    <div class="field form-group">
     <%= f.label :game %><br>
     <%= f.text_field :game, class: "form-control" %>
@@ -43,6 +48,15 @@
     <%= f.label :teach %><br>
     <%= f.text_field :teach, class: "form-control" %>
   </div>
+  <div class="field form-group">
+    <%= f.label "Tell other players about your Gamenight" %><br>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+  <div>
+    <%= f.label :icon %><br>
+    <%= f.select :icon, ['Board Game', 'Card', 'Role Playing', 'Table Top', 'Phoenix', 'Pirate', 'Racing Flags', 'Radio Active', 'Builder', 'UFO', 'Viking'] %>
+  </div>
+  <br>
   
  
   <div class="actions">
