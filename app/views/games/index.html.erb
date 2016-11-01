@@ -1,3 +1,5 @@
+<% link_color = "#000000" %>
+
 <p id="notice"><%= notice %></p>
 
 <a  name="gamenight"></a>
@@ -6,63 +8,46 @@
     <div class="port-header"><h2>Games!</h2></div>
     <br>
     <div class="row">
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <%= image_tag('card-icon.png') %>
-          <div class="caption">
-            <h3><a href="#" target="_blank">@game.title</a></h3>
-             <p class="lead">@game.category</p>
-                        <p><ul>
-                            <li>@game.games_type</li>
-                            <li>@game.weight</li>
-                            <li>@game.age</li>
-                            <li>@game.players</li>
-                            <li>@game.table_size</li>
-                            <li>@game.description</li>
-                        </ul></p>
-            <p><a href="#" class="btn btn-default" role="button" target="_blank">Join This Game Night</a></p>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">    
-          <img src="img/chef.png" alt="">
-          <div class="caption">
-            <h3><a href="https://chef2chef.herokuapp.com" target="_blank">Chef2Chef</a></h3>
-             <p class="lead">Web App Development - Ruby on Rails, Ruby, Ruby Gems, JavaScript, Bootstrap, HTML, CSS</p>
-                        <p><ul>
-                            <li></li>
-                            <li>Used Devise Ruby Gem to create user profile options and functionality</li>
-                            <li>Pushed to Heroku -- currently hosting web app</li>
-                        </ul></p>
-            <p><a href="https://chef2chef.herokuapp.com" class="btn btn-primary" role="button">Visit Site</a></p>
+      <% @g.each do |game| %> 
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <% if game.games_type == "Table Top" || game.games_type == "Tabletop" %>
+              <%= image_tag('tabletop-icon.png') %>
+              <% link_color = "#970083" %>
+            <% elsif game.games_type == "Card" || game.games_type == "Card Game" %>
+              <%= image_tag('card-icon.png') %>
+              <% link_color =  "#188cb2" %>
+            <% elsif game.games_type == "Role Playing" || game.games_type == "RPG" %>
+              <%= image_tag('rpg-icon.png') %>
+              <% link_color =  "#ae2121" %>
+            <% elsif game.games_type == "Board Game" || game.games_type == "Boardgame"%>
+              <%= image_tag('board-game-icon.png') %>
+              <% link_color =  "#009760" %>
+            <% end %>
+            <div class="caption">
+              <h3><a href="#" style="color: <%= link_color %>" target="_blank"><%= game.title %></a></h3>
+               <p class="lead"><%= game.category %></p>
+                          <p><ul>
+                              <li><%= game.games_type %></li>
+                              <li><%= game.weight %></li>
+                              <li>Age Rating: <%= game.age %></li>
+                              <li>Players: <%= game.players %></li>
+                              <li><%= game.table_size %></li>
+                              <li><%= game.description[0...256] %>...
+                                <%= link_to "Read More", game %>
+                              </li>
+                          </ul></p>
+              <p><a href="#" class="btn btn-default" role="button" target="_blank">More Game Info</a></p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
 
-       <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">    
-          <img src="img/ttsapp.png" alt="">
-          <div class="caption">
-            <h3><a href="https://ttstwittapp.herokuapp.com/users/sign_in" target="_blank">TTS Twitt App</a></h3>
-             <p class="lead">Web App Development - Ruby on Rails, Ruby, Ruby Gems, jQuery, Bootstrap, HTML, CSS</p>
-                        <p><ul>
-                            <li>Built from scratch with RoR framework to resemble Twitter</li>
-                            <li>Integrated jQuery API</li>
-                            <li>Used Paperclip Gem to add photos to user pages</li>
-                
-                        </ul></p>
-            <p><a href="https://ttstwittapp.herokuapp.com/users/sign_in" class="btn btn-primary" role="button">Visit Site</a></p>
-          </div>
-        </div>
-      </div>
+       
     </div>
 </div>
 
 
 
-
-
 <%= link_to 'Back', games_path %>
-     
