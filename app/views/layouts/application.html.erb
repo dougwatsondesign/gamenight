@@ -39,7 +39,7 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Zip Code" style="width: 125px;">
           </div>
-          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Let's Play</button>
+          <%= button_to "Let's Play", events_path, method: :get, class: 'btn btn-default' %>
         </form>
         <ul class="nav navbar-nav navbar-right">
          <ul class="nav navbar-nav">
@@ -84,10 +84,6 @@
                             <a><%= link_to "About GameNights", about_path %></a>
                         </li>
                         
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a><%= link_to "Contact", contact_path %></a>
-                        </li>
                     </ul>
 
                        <hr>
