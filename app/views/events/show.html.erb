@@ -77,7 +77,14 @@
 
 </div>
 
+<div id="event-map"></div>
 
+<%= javascript_tag do %>
+   latitude = '<%= j @event.latitude.to_s %>';
+   longitude = '<%= j @event.longitude.to_s %>';
+   address = '<%= j @event.address %>';
+   game = '<%= j @event.game %>';
+<% end %>
 
 <%= button_to 'Back', events_path, method: :get, class: 'btn btn-default' %>
 

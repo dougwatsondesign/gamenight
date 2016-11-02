@@ -4,7 +4,8 @@ class Event < ApplicationRecord
 	# belongs_to :venue
 	has_many :attendings
 	
-
+	geocoded_by :address
+  	after_validation :geocode
 
 	validates :game, presence: true
 	validates :location, presence: true
