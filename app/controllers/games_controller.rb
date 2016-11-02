@@ -5,6 +5,7 @@ class GamesController < ApplicationController
     end
 
     def show
+    	@e = Event.all
     end
 
     def index
