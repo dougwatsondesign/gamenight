@@ -95,8 +95,9 @@ hr {
 }
 
 .style_image {
-    max-width: 160px;
-    padding-left: 10px;
+    max-width: 210px;
+    padding-left: 15px;
+    margin-top: -10px;
 }
 
 #about-page {
