@@ -9,6 +9,8 @@
               
                 <center><div class="col-md-7">
 
+
+
                     <% if @event.icon == "Board Game" %>
                       <%= image_tag('board-game-icon.png') %>
                     <% elsif @event.icon == "Card" %>
@@ -39,13 +41,24 @@
 
                 <div class="col-md-5">
 
+                <% event_time = @event.time.to_s %>
+                <% event_time = event_time.reverse %>
+                <% j = 0 %>
+                
+                <% while j < 11  do %>
+                  <% event_time = event_time.chop %>
+                  <% j += 1 %>
+                <% end %>
+                
+                <% event_time = event_time.reverse %>
+
                
                 
                     <h2 class="section-heading"><%= @event.title %></h2>
                     <p><strong>Game: </strong><%= @event.game %></p>
                     <p><strong>Location: </strong><%= @event.location %></p>
                     <p><strong>Date: </strong><%= @event.date %></p>
-                    <p><strong>Time: </strong><%= @event.time %></p>
+                    <p><strong>Time: </strong> <%= event_time %></p>
                     <p><strong>Snacks: </strong><%= @event.snacks %></p>
                     <p><strong>Variations?: </strong><%= @event.variation %></p>
                     <p><strong>Teach?: </strong><%= @event.teach %></p>
