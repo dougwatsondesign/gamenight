@@ -38,7 +38,7 @@
                                 <%= link_to "Read More", game %>
                               </li>
                           </ul></p>
-              <p><a href="#" class="btn btn-default" role="button" target="_blank">Host This Game</a></p>
+              <p><%= button_to 'More Game Info', game, method: :get, class: 'btn btn-default' %></p>
             </div>
           </div>
         </div>
@@ -50,4 +50,4 @@
 
 
 
-<%= link_to 'Back', games_path %>
+<%= button_to 'New Game', new_game_path, method: :get, class: 'btn btn-default' %>
