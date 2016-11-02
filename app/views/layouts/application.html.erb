@@ -15,54 +15,56 @@
 
   </head>
 
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to image_tag("navlogo.png", :class => "style_image"), root_path, class: "navbar-brand" %>
-    </div>
+  <% if user_signed_in? %>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to image_tag("navlogo.png", :class => "style_image"), root_path, class: "navbar-brand" %>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     
-      <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="What Game Do You Want to Play?" style="width: 300px;">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Zip Code" style="width: 125px;">
-        </div>
-        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Let's Play</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-       <ul class="nav navbar-nav">
-  
-        <li><%= link_to "Browse Games", games_path, class: "navbar-brand" %></li>
-        <li><%= link_to "Browse Venues", venues_path, class: "navbar-brand" %></li>
-        
-      </ul>
-        
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "View Profile", profile_path(current_user) %></li>
-            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-            <li role="separator" class="divider"></li>
-            <li><% if user_signed_in? %>
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-            <% end %></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="What Game Do You Want to Play?" style="width: 300px;">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Zip Code" style="width: 125px;">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> Let's Play</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+         <ul class="nav navbar-nav">
+    
+          <li><%= link_to "Browse Games", games_path, class: "navbar-brand" %></li>
+          <li><%= link_to "Browse Venues", venues_path, class: "navbar-brand" %></li>
+          
+        </ul>
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "View Profile", profile_path(current_user) %></li>
+              <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+              <li role="separator" class="divider"></li>
+              <li><% if user_signed_in? %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+              <% end %></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+<% end %>
   <body>   
     <%= yield %>
   </body>
