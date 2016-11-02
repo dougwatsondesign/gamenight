@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101162608) do
+ActiveRecord::Schema.define(version: 20161102164431) do
 
   create_table "attendings", force: :cascade do |t|
     t.integer  "user_id"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 20161101162608) do
     t.string   "phone"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end

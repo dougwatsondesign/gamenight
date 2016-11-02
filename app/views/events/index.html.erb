@@ -1,13 +1,29 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <a  name="gamenight"></a>
 <div class="container-fluid">
 <br>
     <div class="port-header"><h2>Gamenights!</h2></div>
     <br>
     <div class="row">
-
+        
+      <% event_time = "" %>
+      
       <% @e.each do |event| %> 
+        
+        <% event_time = event.time.to_s %>
+        <% event_time = event_time.reverse %>
+        <% j = 0 %>
+        
+        <% while j < 11  do %>
+          <% event_time = event_time.chop %>
+          <% j += 1 %>
+        <% end %>
+        
+        <% event_time = event_time.reverse %>
+
         <div class="col-sm-6 col-md-4">
           <div class="thumbnail">
             <% if event.icon == "Board Game" %>
@@ -41,7 +57,7 @@
                                 <%= link_to "Read More", event %>
                             </p><br>
                               <p><strong>Location:</strong> <%= event.location %></p>
-                              <p><strong>When:</strong> <%= event.time %></p>
+                              <p><strong>When: </strong><%= event.date %> at <%= event_time %></p>
                               
                           </ul></p>
               <p><%= button_to 'More Event Info', event, method: :get, class: 'btn btn-default' %></p>

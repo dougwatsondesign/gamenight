@@ -42,6 +42,16 @@
 
 </div>
 
+<div id="venue-map"></div>
+
+<%= javascript_tag do %>
+   latitude = '<%= j @venue.latitude.to_s %>';
+   longitude = '<%= j @venue.longitude.to_s %>';
+   address = '<%= j @venue.address %>';
+   name = '<%= j @venue.name %>';
+   venues_type = '<%= j @venue.venues_type %>';
+<% end %>
+
 
 
 <%= button_to 'Back', venues_path, method: :get, class: 'btn btn-default' %>
