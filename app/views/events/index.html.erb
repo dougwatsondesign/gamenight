@@ -44,7 +44,7 @@
                               <p><strong>When:</strong> <%= event.time %></p>
                               
                           </ul></p>
-              <p><a href="#" class="btn btn-default" role="button" target="_blank">More Event Info</a></p>
+              <p><%= button_to 'More Event Info', event, method: :get, class: 'btn btn-default' %></p>
             </div>
           </div>
         </div>
@@ -56,4 +56,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= button_to 'New Event', new_event_path, method: :get, class: 'btn btn-default' %>
