@@ -12,6 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20161101162608) do
 
+  create_table "attendings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "location"
     t.date     "date"

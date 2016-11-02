@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :events
+  resources :events do
+    resource :attending
+  end
   resources :venues 
   resources :games
  

@@ -1,0 +1,14 @@
+<% if current_user.attendings?(@event) %>
+	<%= link_to "Not Attending", event_attending_path(@event), method: :delete %>
+<% else %>
+  <%= link_to "Attending", event_attending_path(@event), method: :post %>
+<% end %>
+
+<%= @event.attendings.count %>
+
+Attended by: 
+<% @event.attendings.each do |attending| %>
+	<br>
+	<%= attending.user.username %>
+	<br>
+<% end %>

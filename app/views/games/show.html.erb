@@ -1,10 +1,57 @@
 <p id="notice"><%= notice %></p>
 
 
+        <div class="container">
+
+            <div class="row">
+             
+              
+                <center><div class="col-md-7">
+
+                      <% if @game.games_type == "Table Top" || @game.games_type == "Tabletop" %>
+                        <%= image_tag('tabletop-icon.png', class: "img-responsive") %>
+                        <% link_color = "#970083" %>
+                      <% elsif @game.games_type == "Card" || @game.games_type == "Card Game" %>
+                        <%= image_tag('card-icon.png', class: "img-responsive") %>
+                        <% link_color =  "#188cb2" %>
+                      <% elsif @game.games_type == "Role Playing" || @game.games_type == "RPG" %>
+                        <%= image_tag('rpg-icon.png', class: "img-responsive") %>
+                        <% link_color =  "#ae2121" %>
+                      <% elsif @game.games_type == "Board Game" || @game.games_type == "Boardgame"%>
+                        <%= image_tag('board-game-icon.png', class: "img-responsive") %>
+                        <% link_color =  "#009760" %>
+                      <% end %>
+                    
+                </div></center>
+
+               
+
+                <div class="col-md-5">
+
+               
+                
+                    <h2 class="section-heading"><%= @game.title %></h2>
+                    <p><strong>Type: </strong><%= @game.games_type %></p>
+                    <p><strong>Category: </strong><%= @game.category %></p>
+                    <p><strong>Age: </strong><%= @game.age %></p>
+                    <p><strong>Weight: </strong><%= @game.weight %></p>
+                    <p><strong># Players: </strong><%= @game.players %></p>
+                    <br>
+                    <p><strong>Description:</strong></p>
+                    <p><%= @game.description %></p>
+
+                     <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-king"></i> Host This Game</button>
+
+               
+                </div>
+         
+
+        </div>
+        <!-- /.container -->
+
+</div>
 
 
 
-
-<%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
      
