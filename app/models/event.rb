@@ -5,13 +5,10 @@ class Event < ApplicationRecord
 	has_many :attendings
 
 	def self.search(search)
-  		where("game LIKE ?", "%#{search}%") 
-  		where("location LIKE ?", "%#{search}%")
-  		where("teach LIKE ?", "%#{search}%") 
-  		where("snacks LIKE ?", "%#{search}%")
-  		where("date LIKE ?", "%#{search}%") 
-  		where("time LIKE ?", "%#{search}%")
-  		where("address LIKE ?", "%#{search}%") 
+  		Event.where("game LIKE ?", "%#{search}%")
+  		Event.where("description LIKE ?", "%#{search}%")
+  		Event.where("address LIKE ?", "%#{search}%") 
+  	
 	end
 	
 	geocoded_by :address
