@@ -100,6 +100,11 @@ hr {
     margin-top: -10px;
 }
 
+.style_image1 {
+    max-width: 210px;
+    padding-left: 15px;
+}
+
 #about-page {
     background-color: #FFFFFF;
 }
