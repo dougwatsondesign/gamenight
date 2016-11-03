@@ -44,12 +44,21 @@
                     <%= button_to 'Host This Game', new_event_path, method: :get, class: 'btn btn-default' %>
                    
 
-               
+               <br>
                 </div>
+                <br>
+                <br>
+                </div>
+                </div>
+                
+                <div class="container-fluid">
+                <br>
+
                 <center><h2>Upcoming game nights for <%= @game.title %></h2></center>
 
-
-
+                <br>
+                
+            
                  <% @e.each do |event| %> 
                     <% if event.game == @game.title %>
                         <% event_time = event.time.to_s %>
@@ -107,9 +116,9 @@
                   <% end%>
                     
                 <% end %>
-         
-
-        </div>
+        
+          </div>
+        
         <!-- /.container -->
 
 </div>
