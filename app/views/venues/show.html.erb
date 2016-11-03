@@ -29,7 +29,7 @@
                     <p><strong>Venue Type: </strong><%= @venue.venues_type %></p>
                     <p><strong>Location: </strong><%= @venue.address %></p>
                     <p><strong>Phone: </strong><%= @venue.phone %></p>
-                    <p><strong>Website: </strong><%= @venue.website %></p>
+                    <p><strong>Website: </strong><%= link_to @venue.website, "http://#{@venue.website}", target: "_blank" %></p>
                     
 
                      

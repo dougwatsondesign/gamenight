@@ -24,7 +24,7 @@
                           <p><ul>
                               <li><%= venue.address %></li>
                               <li><%= venue.phone %></li>
-                              <li><%= venue.website %></li>
+                              <li><%= link_to venue.website, "http://#{venue.website}", target: "_blank" %></li>
                           </ul></p>
                 <p><%= button_to 'More Venue Info', venue, method: :get, class: 'btn btn-default' %></p>
               
