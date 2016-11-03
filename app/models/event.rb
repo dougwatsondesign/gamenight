@@ -14,4 +14,14 @@ class Event < ApplicationRecord
 	validates :snacks, presence: true
 	validates :date, presence: true
 	validates :time, presence: true
+
+	def self.search(search)
+  		where("game ILIKE ?", "%#{search}%") 
+  		where("location ILIKE ?", "%#{search}%")
+  		where("teach ILIKE ?", "%#{search}%") 
+  		where("snacks ILIKE ?", "%#{search}%")
+  		where("date ILIKE ?", "%#{search}%") 
+  		where("time ILIKE ?", "%#{search}%")
+  		where("address ILIKE ?", "%#{search}%") 
+	end
 end
