@@ -6,8 +6,7 @@ class Event < ApplicationRecord
 
 	def self.search(search)
   		Event.where("game LIKE ?", "%#{search}%")
-  		Event.where("description LIKE ?", "%#{search}%")
-  		Event.where("address LIKE ?", "%#{search}%") 
+
   	
 	end
 	
