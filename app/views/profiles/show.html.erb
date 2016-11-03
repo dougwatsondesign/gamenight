@@ -64,8 +64,21 @@
          <h3><%= event.title %></h3>
                <p class="lead"><%= event.date %></p>
                <p><ul>
+
+
+                <% event_time = event.time.to_s %>
+                <% event_time = event_time.reverse %>
+                <% j = 0 %>
+                
+                <% while j < 11  do %>
+                  <% event_time = event_time.chop %>
+                  <% j += 1 %>
+                <% end %>
+                
+                <% event_time = event_time.reverse %>
+
                   <li>Hosted by: <%= event.user.username %></li>
-                  <li>Time: <%= event.time %></li>
+                  <li>Time: <%= event_time %></li>
                   <li>Game: <%= event.game %></li>
                   <li>Location: <%= event.location %></li>
                   <li>Snacks: <%= event.snacks %></li>
