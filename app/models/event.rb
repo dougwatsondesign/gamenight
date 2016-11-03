@@ -3,6 +3,16 @@ class Event < ApplicationRecord
 	# belongs_to :game
 	# belongs_to :venue
 	has_many :attendings
+
+	def self.search(search)
+  		where("game LIKE ?", "%#{search}%") 
+  		where("location LIKE ?", "%#{search}%")
+  		where("teach LIKE ?", "%#{search}%") 
+  		where("snacks LIKE ?", "%#{search}%")
+  		where("date LIKE ?", "%#{search}%") 
+  		where("time LIKE ?", "%#{search}%")
+  		where("address LIKE ?", "%#{search}%") 
+	end
 	
 	geocoded_by :address
   	after_validation :geocode
@@ -15,13 +25,5 @@ class Event < ApplicationRecord
 	validates :date, presence: true
 	validates :time, presence: true
 
-	def self.search(search)
-  		where("game ILIKE ?", "%#{search}%") 
-  		where("location ILIKE ?", "%#{search}%")
-  		where("teach ILIKE ?", "%#{search}%") 
-  		where("snacks ILIKE ?", "%#{search}%")
-  		where("date ILIKE ?", "%#{search}%") 
-  		where("time ILIKE ?", "%#{search}%")
-  		where("address ILIKE ?", "%#{search}%") 
-	end
+	
 end
