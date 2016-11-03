@@ -66,7 +66,22 @@
                     <p><strong>Description:</strong></p>
                     <p><%= @event.description %></p>
 
-                     <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-ok"></i> Attend This Game Night!</button>
+                     <button type="submit" class="btn btn-default"></i>
+
+                     <% if current_user.attendings?(@event) %>
+                        <%= link_to event_attending_path(@event), method: :delete do %>
+                        <p>Can't Play <i class="glyphicon glyphicon-remove"></i></p>
+                        <% end %>
+                     <% else %>
+                        <%= link_to event_attending_path(@event), method: :post do %>
+                        <p>Join this game! <i class="glyphicon glyphicon-ok"></i></p>
+                        <% end %>
+                      <% end %>
+                      </button>
+                     <p><strong>Players: </strong><% @event.attendings.each do %>
+                          <%= @event.attendings.name %>
+                        <% end %>
+                     </p>
 
                
                 </div>
