@@ -35,18 +35,19 @@
         <div class="navbar-form navbar-left"> <!-- changed to div from form, form used for searches -->
 
         <%= form_tag(events_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Events" %>
-       <%= submit_tag "Search" %>
+        <%= text_field_tag :search, params[:search], style: "width: 250px;", placeholder: "Type a game and let's play!" %>
+       <%= submit_tag "Search", class: "btn btn-default" %>
        <% end %>
          
-          <%= button_to "Find the perfect game night", events_path, method: :get, class: "btn btn-default" %>
+
         </div>
         <ul class="nav navbar-nav navbar-right">
          <ul class="nav navbar-nav">
-    
-          <li><%= link_to "Browse Games", games_path, class: "navbar-brand" %></li>
-          <li><%= link_to "Browse Venues", venues_path, class: "navbar-brand" %></li>
-          
+         
+          <li><%= link_to "Find a Game Night", events_path, class: "navbar-brand" %></li>
+          <li><%= link_to "Browse by Venue", venues_path, class: "navbar-brand" %></li>
+          <li><%= link_to "Browse by Game", games_path, class: "navbar-brand" %></li>
+       
         </ul>
           
           <li class="dropdown">
