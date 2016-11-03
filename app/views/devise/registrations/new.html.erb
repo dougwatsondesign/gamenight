@@ -6,7 +6,7 @@
 
   <div class="field form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, class: "form-control", autofocus: true %>
+    <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "Email" %>
   </div>
 
   <div class="field form-group">
@@ -14,12 +14,12 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+    <%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "Password" %>
   </div>
 
   <div class="field form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off", placeholder: "Password Confirmation" %>
   </div>
 
   <div class="field form-group">
@@ -28,24 +28,29 @@
   </div>
 
   <div class="field form-group">
+    <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "First and Last Name" %>
-  </div><br />
+  </div>
 
   <div class="field form-group">
-    <%= f.text_field :username, class: "form-control", placeholder: "@Username" %>
-  </div><br />
+    <%= f.label :username %><br />
+    <%= f.text_field :username, class: "form-control", placeholder: "Username" %>
+  </div>
 
   <div class="field form-group">
-    <%= f.text_field :location, class: "form-control", placeholder: "Zip code here!" %>
-  </div><br />
+    <%= f.label :location %><br />
+    <%= f.text_field :location, class: "form-control", placeholder: "Zip code here" %>
+  </div>
 
 
   <div class="field form-group">
+    <%= f.label :birthday %><br />
     <%= f.date_field :birthday, class: "form-control" %>
   </div>
 
    <div class="field form-group">
-    <%= f.text_field :gender, class: "form-control", placeholder: "Your gender here." %>
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, class: "form-control", placeholder: "Your gender here" %>
   </div>
 
   <div class="actions">
