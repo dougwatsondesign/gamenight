@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102182939) do
+ActiveRecord::Schema.define(version: 20161116011207) do
 
   create_table "attendings", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20161102182939) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.integer  "players"
     t.index ["game_id"], name: "index_events_on_game_id"
     t.index ["venue_id"], name: "index_events_on_venue_id"
   end

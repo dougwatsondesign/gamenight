@@ -52,6 +52,11 @@
                 
                 <% event_time = event_time.reverse %>
 
+                <% num_attending = 0 %>
+                <% @event.attendings.each do |attend|%>
+                  <% num_attending += 1%>
+                <% end %>
+
                
                 
                     <h2 class="section-heading"><%= @event.title %></h2>
@@ -59,6 +64,8 @@
                     <p><strong>Location: </strong><%= @event.location %></p>
                     <p><strong>Date: </strong><%= @event.date %></p>
                     <p><strong>Time: </strong> <%= event_time %></p>
+                    <p><strong>Number of Players: </strong><%= num_attending %> out of <%= @event.players %></p>
+
                     <p><strong>Snacks: </strong><%= @event.snacks %></p>
                     <p><strong>Variations?: </strong><%= @event.variation %></p>
                     <p><strong>Teach?: </strong><%= @event.teach %></p>
@@ -67,20 +74,27 @@
                     <p><%= @event.description %></p>
 
 
-                     <% if current_user.attendings?(@event) %>
-                        <%= button_to event_attending_path(@event), class: "btn btn-default", method: :delete do %>
+                    <% if current_user.attendings?(@event) %>
+                      <%= button_to event_attending_path(@event), class: "btn btn-default", method: :delete do %>
                         Can't Play <i class="glyphicon glyphicon-remove"></i>
                         <% end %>
-                     <% else %>
+                    <% else %>
+                      <% if num_attending >= @event.players %>
+                        <p>This Gamenight is full!</p>
+                      <% else %>
                         <%= button_to event_attending_path(@event), class: "btn btn-default", method: :post do %>
                         Join this game! <i class="glyphicon glyphicon-ok"></i>
                         <% end %>
                       <% end %>
+                    <% end %>
                  
                      <p><strong>Players: </strong><% @event.attendings.each do |attend|%>
+
                           <%= attend.user.username%>
                         <% end %>
                      </p>
+
+
 
                
                 </div>
