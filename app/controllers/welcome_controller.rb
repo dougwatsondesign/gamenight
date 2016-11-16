@@ -12,4 +12,7 @@ class WelcomeController < ApplicationController
 
   def games
   end
+
+  def google4b2411dbe48330d6
+  end
 end

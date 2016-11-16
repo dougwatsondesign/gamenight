@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   get 'contact' => 'welcome#contact'
 
+  get 'google4b2411dbe48330d6' => 'welcome#google4b2411dbe48330d6'
+
 end
