@@ -20,6 +20,8 @@ class Event < ApplicationRecord
 	validates :snacks, presence: true
 	validates :date, presence: true
 	validates :time, presence: true
+	validates :players, presence: true
+
 
 	
 end
